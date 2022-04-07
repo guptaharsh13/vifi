@@ -1,0 +1,27 @@
+{
+  "name": "automatic-wifi",
+  "version": "1.0.0",
+  "description": "A chrome extension to automatically fill wifi credentials.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guptaharsh13/automatic-wifi.git"
+  },
+  "keywords": [
+    "automatic",
+    "wifi"
+  ],
+  "author": "Harsh Gupta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guptaharsh13/automatic-wifi/issues"
+  },
+  "homepage": "https://github.com/guptaharsh13/automatic-wifi#readme",
+  "dependencies": {
+    "@types/chrome": "^0.0.176",
+    "types": "^0.1.1"
+  }
+}

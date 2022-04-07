@@ -1,0 +1,39 @@
+{
+    "name": "VIFI Autoconnect",
+    "description": "An extension made to help VIT students connect to their WIFI seamlessly !!",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "content.js"
+            ],
+            "matches": [
+                "http://phc.prontonetworks.com/cgi-bin/authlogin?URI=http://www.msftconnecttest.com/redirect",
+                "http://phc.prontonetworks.com/cgi-bin/authlogin?URI=http://www.gstatic.com/generate_204",
+                "http://phc.prontonetworks.com/cgi-bin/authlogout"
+            ],
+            "exclude_matches": [],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "storage",
+        "notifications"
+    ],
+    "host_permissions": [],
+    "icons": {
+        "16": "icon_16.png",
+        "32": "icon_32.png",
+        "48": "icon_48.png",
+        "128": "icon_128.png"
+    },
+    "action": {
+        "default_title": "VIFI Autoconnect - made for VIT students !!",
+        "default_icon": "icon_16.png",
+        "default_popup": "popup.html"
+    }
+}
