@@ -1,4 +1,4 @@
-// console.log("content.js is working | from VIFI Autoconnect");
+// console.log("content.js is working | from ViFi");
 
 if (
   document.body.textContent.includes("Congratulations") ||
@@ -101,7 +101,7 @@ if (
       content:
         "We were unable to login automatically. You may drop your query at hg242322@gmail.com.\nWe'd be happy to hear your feedback !!",
     });
-    // console.log("Unable to login | from VIFI Autoconnect");
+    // console.log("Unable to login | from ViFi");
     console.log(error);
   }
 }

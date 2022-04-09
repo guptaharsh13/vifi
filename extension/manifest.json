@@ -1,6 +1,6 @@
 {
-    "name": "VIFI Autoconnect",
-    "description": "An extension made to help VIT students connect to their WIFI seamlessly !!",
+    "name": "ViFi",
+    "description": "An extension made to help VIT students connect to their WiFi seamlessly !!",
     "version": "1.0.0",
     "manifest_version": 3,
     "background": {
@@ -32,7 +32,7 @@
         "128": "icon_128.png"
     },
     "action": {
-        "default_title": "VIFI Autoconnect - made for VIT students !!",
+        "default_title": "ViFi - made for VIT students !!",
         "default_icon": "icon_16.png",
         "default_popup": "popup.html"
     }
