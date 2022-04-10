@@ -26,14 +26,14 @@
     ],
     "host_permissions": [],
     "icons": {
-        "16": "icon_16.png",
-        "32": "icon_32.png",
-        "48": "icon_48.png",
-        "128": "icon_128.png"
+        "16": "icons/icon_16.png",
+        "32": "icons/icon_32.png",
+        "48": "icons/icon_48.png",
+        "128": "icons/icon_128.png"
     },
     "action": {
         "default_title": "ViFi - made for VIT students !!",
-        "default_icon": "icon_16.png",
+        "default_icon": "icons/icon_16.png",
         "default_popup": "popup.html"
     }
 }

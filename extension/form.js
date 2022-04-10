@@ -5,7 +5,7 @@ const notify = (heading, content) => {
     type: "basic",
     title: heading,
     message: content,
-    iconUrl: "icon_128.png",
+    iconUrl: "icons/icon_128.png",
   };
   chrome.notifications.create(options, (id) => {
     console.log(`notification sent - ${id}`);

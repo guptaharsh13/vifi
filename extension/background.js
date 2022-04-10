@@ -4,7 +4,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       type: "basic",
       title: request.heading,
       message: request.content,
-      iconUrl: "icon_128.png",
+      iconUrl: "icons/icon_128.png",
     };
 
     if (request.id === "feedback") {
