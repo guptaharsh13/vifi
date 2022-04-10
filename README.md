@@ -11,9 +11,9 @@ Javascript
 - Clone the repo.
   `https://github.com/guptaharsh13/vifi`
 - Launch Google Chrome and type `chrome:/extensions/` into the address bar, then hit enter
-- Switch on Developer mode in the top-right corner
-- You would now have an option to Load unpacked in the top-left corner
-- Click it, then navigate to the cloned repo and select the extension folder
+- Switch on `Developer mode` in the top-right corner
+- You would now have an option to `Load unpacked` in the top-left corner
+- Click it, then navigate to the cloned repo and select the `extension` folder
 - Congratulations, your extension has been successfully installed !!
 
 ## Using the extension
