@@ -30,3 +30,9 @@ chrome.notifications.onButtonClicked.addListener((id) => {
     window.open("https://chrome.google.com/webstore/category/extensions");
   }
 });
+
+chrome.runtime.onStartup.addListener(() => {
+  chrome.storage.sync.set({ login_count: 0 }, (response) => {
+    console.log(`login count - ${response.login_count}`);
+  });
+});
