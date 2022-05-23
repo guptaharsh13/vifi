@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.notify) {
     const options = {
       type: "basic",
@@ -8,31 +8,31 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     };
 
     if (request.id === "feedback") {
-      chrome.notifications.create(request.id, options, (id) => {
+      browser.notifications.create(request.id, options, (id) => {
         console.log(`notification sent - ${id}`);
       });
     } else {
-      chrome.notifications.create(options, (id) => {
+      browser.notifications.create(options, (id) => {
         console.log(`notification sent - ${id}`);
       });
     }
   }
 });
 
-chrome.notifications.onClicked.addListener((id) => {
+browser.notifications.onClicked.addListener((id) => {
   if (id === "feedback") {
-    window.open("https://chrome.google.com/webstore/category/extensions");
+    window.open("https://browser.google.com/webstore/category/extensions");
   }
 });
 
-chrome.notifications.onButtonClicked.addListener((id) => {
+browser.notifications.onButtonClicked.addListener((id) => {
   if (id === "feedback") {
-    window.open("https://chrome.google.com/webstore/category/extensions");
+    window.open("https://browser.google.com/webstore/category/extensions");
   }
 });
 
-chrome.runtime.onStartup.addListener(() => {
-  chrome.storage.sync.set({ login_count: 0 }, (response) => {
+browser.runtime.onStartup.addListener(() => {
+  browser.storage.sync.set({ login_count: 0 }, (response) => {
     console.log(`login count - ${response.login_count}`);
   });
 });

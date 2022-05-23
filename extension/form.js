@@ -7,7 +7,7 @@ const notify = (heading, content) => {
     message: content,
     iconUrl: "icons/icon_128.png",
   };
-  chrome.notifications.create(options, (id) => {
+  browser.notifications.create(options, (id) => {
     console.log(`notification sent - ${id}`);
   });
 };
@@ -21,10 +21,10 @@ document
     const password = document.querySelector("input[name='password']").value;
 
     try {
-      chrome.storage.sync.set({ username, password }, () => {
+      browser.storage.sync.set({ username, password }, () => {
         alert("Username and Password saved locally !!");
         notify("Your'e all set", "Username and Password saved locally");
-        chrome.storage.sync.set({ login_count: 0 }, (res) => {
+        browser.storage.sync.set({ login_count: 0 }, (res) => {
           console.log(`login count - ${res.login_count}`);
         });
       });

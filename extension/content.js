@@ -4,12 +4,12 @@ if (
   document.body.textContent.includes("Congratulations") ||
   document.body.textContent.includes("You have successfully logged out.")
 ) {
-  chrome.storage.sync.set({ login_count: 0 }, () => {
+  browser.storage.sync.set({ login_count: 0 }, () => {
     console.log(`login count - ${login_count}`);
   });
 } else {
   try {
-    chrome.storage.sync.get(["username", "password"], (res) => {
+    browser.storage.sync.get(["username", "password"], (res) => {
       username = res.username;
       password = res.password;
 
@@ -23,7 +23,7 @@ if (
         // alert(
         //   "Your'e just one step away\n\nYou can save your Username and Password by clicking on the extension icon.\nWe value your privacy, and thus, your Username and Password is only saved on your device."
         // );
-        chrome.runtime.sendMessage(
+        browser.runtime.sendMessage(
           {
             notify: true,
             heading: "Your'e just one step away",
@@ -34,7 +34,7 @@ if (
             console.log("message sent to background.js");
           }
         );
-        chrome.runtime.sendMessage(
+        browser.runtime.sendMessage(
           {
             notify: true,
             heading: "We value your privacy",
@@ -48,7 +48,7 @@ if (
         document.querySelector("input[name='userId']").value = username;
         document.querySelector("input[name='password']").value = password;
 
-        chrome.storage.sync.get(["login_count"], (response) => {
+        browser.storage.sync.get(["login_count"], (response) => {
           if (!response.login_count) {
             login_count = 0;
           } else {
@@ -57,11 +57,11 @@ if (
 
           if (login_count === 0) {
             document.querySelector(".loginbutton").click();
-            chrome.storage.sync.get(["feedback"], (response) => {
+            browser.storage.sync.get(["feedback"], (response) => {
               console.log(`feedback - ${response.feedback}`);
 
               if (!response.feedback) {
-                chrome.runtime.sendMessage({
+                browser.runtime.sendMessage({
                   notify: true,
                   id: "feedback",
                   heading: "I'm sure you liked our extension",
@@ -72,13 +72,13 @@ if (
                 console.log("feedback already requested");
               }
 
-              chrome.storage.sync.set({ feedback: true }, () => {
+              browser.storage.sync.set({ feedback: true }, () => {
                 console.log("feedback requested");
               });
             });
           } else {
             console.log(`login count - ${login_count}`);
-            chrome.runtime.sendMessage({
+            browser.runtime.sendMessage({
               notify: true,
               heading: "Oops! Unable to login ",
               content:
@@ -88,14 +88,14 @@ if (
 
           login_count++;
 
-          chrome.storage.sync.set({ login_count }, () => {
+          browser.storage.sync.set({ login_count }, () => {
             console.log(`login count - ${login_count}`);
           });
         });
       }
     });
   } catch (error) {
-    chrome.runtime.sendMessage({
+    browser.runtime.sendMessage({
       notify: true,
       heading: "Something went wrong :(",
       content:
