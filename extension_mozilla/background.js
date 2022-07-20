@@ -21,13 +21,13 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 browser.notifications.onClicked.addListener((id) => {
   if (id === "feedback") {
-    window.open("https://browser.google.com/webstore/category/extensions");
+    window.open("https://chrome.google.com/webstore/category/extensions");
   }
 });
 
 browser.notifications.onButtonClicked.addListener((id) => {
   if (id === "feedback") {
-    window.open("https://browser.google.com/webstore/category/extensions");
+    window.open("https://chrome.google.com/webstore/category/extensions");
   }
 });
 
