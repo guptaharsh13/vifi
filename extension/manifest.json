@@ -22,7 +22,8 @@
     ],
     "permissions": [
         "storage",
-        "notifications"
+        "notifications",
+        "tabs"
     ],
     "host_permissions": [],
     "icons": {
