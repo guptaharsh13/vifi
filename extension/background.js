@@ -20,22 +20,22 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.id === "feedback") {
       chrome.notifications.create(request.id, options, (id) => {
         console.log(`notification sent - ${id}`);
-        chrome.tabs.query({
+        setTimeout(chrome.tabs.query({
           currentWindow:true,
           active:true
         },function(tabs){
           chrome.tabs.remove(tabs[0].id);
-        });
+        }),5000);
       });
     } else {
       chrome.notifications.create(options, (id) => {
         console.log(`notification sent - ${id}`);
-        chrome.tabs.query({
+        setTimeout(chrome.tabs.query({
           currentWindow:true,
           active:true
         },function(tabs){
           chrome.tabs.remove(tabs[0].id);
-        });
+        }),5000);
       });
     }
   }
