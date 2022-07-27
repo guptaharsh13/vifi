@@ -1,10 +1,15 @@
 # ViFi
 
+![Readme Cover](readme_cover.png)
+
+## About
+
 An extension made to help VIT students connect to their WiFi seamlessly !!
 
 ## Tech Stack
 
-Javascript
+- Javascript
+- Chrome API
 
 ## Installing the extension
 
@@ -23,6 +28,11 @@ Javascript
 - Your Username and Password are only stored locally on your device
 - That's it, you're all set to automatically login to your VIT WiFi the next time you connect !!
 
+### Shortcuts
+
+- Ctrl + Shift + V - To automatically login to your VIT WiFi
+- Ctrl + Shift + L - To logout to your VIT WiFi
+
 ## Getting Started
 
 To get started -
@@ -38,6 +48,10 @@ To get started -
 - Open a pull request :)
 
 To start contributing, check out [`CONTRIBUTING.md`](https://github.com/guptaharsh13/vifi/blob/main/CONTRIBUTING.md) . New contributors are always welcome to support this project.
+
+## Contributors ✨
+
+- [Kavipriya A](https://kavipriya.super.site/) (Design)
 
 ## License
 
