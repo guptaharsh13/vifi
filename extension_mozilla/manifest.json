@@ -3,7 +3,7 @@
     "browser_specific_settings": {
         "gecko": {
           "id": "vifi@mozilla.org",
-          "strict_min_version": "42.0"
+          "strict_min_version": "102.0"
         }
     },
     "description": "An extension made to help VIT students connect to their WiFi seamlessly !!",
