@@ -12,9 +12,12 @@
                 "content.js"
             ],
             "matches": [
-                "http://phc.prontonetworks.com/cgi-bin/authlogin?URI=http://www.msftconnecttest.com/redirect",
-                "http://phc.prontonetworks.com/cgi-bin/authlogin?URI=http://www.gstatic.com/generate_204",
-                "http://phc.prontonetworks.com/cgi-bin/authlogout"
+                "*://phc.prontonetworks.com/cgi-bin/authlogin",
+                "*://phc.prontonetworks.com/cgi-bin/authlogin?*",
+                "*://phc.prontonetworks.com/cgi-bin/authlogout",
+                "*://phc.prontonetworks.com/cgi-bin/authlogout?*",
+                "*://phc.prontonetworks.com/Images/logout.html",
+                "*://phc.prontonetworks.com/Images/logout.html?*"
             ],
             "exclude_matches": [],
             "run_at": "document_end"
@@ -22,7 +25,8 @@
     ],
     "permissions": [
         "storage",
-        "notifications"
+        "notifications",
+        "tabs"
     ],
     "host_permissions": [],
     "icons": {
@@ -35,5 +39,19 @@
         "default_title": "ViFi - made for VIT students !!",
         "default_icon": "icons/icon_16.png",
         "default_popup": "popup.html"
+    },
+    "commands": {
+        "login": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+V"
+            },
+            "description": "Login to VIT WiFi"
+        },
+        "logout": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+L"
+            },
+            "description": "Logout of VIT WiFi"
+        }
     }
 }
