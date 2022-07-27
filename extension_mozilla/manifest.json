@@ -1,0 +1,61 @@
+{
+    "name": "ViFi",
+    "browser_specific_settings": {
+        "gecko": {
+          "id": "vifi@mozilla.org",
+          "strict_min_version": "102.0"
+        }
+    },
+    "description": "An extension made to help VIT students connect to their WiFi seamlessly !!",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "content.js"
+            ],
+            "matches": [
+                "*://phc.prontonetworks.com/cgi-bin/authlogin",
+                "*://phc.prontonetworks.com/cgi-bin/authlogin?*",
+                "*://phc.prontonetworks.com/cgi-bin/authlogout",
+                "*://phc.prontonetworks.com/cgi-bin/authlogout?*",
+                "*://phc.prontonetworks.com/Images/logout.html",
+                "*://phc.prontonetworks.com/Images/logout.html?*"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "storage",
+        "notifications",
+        "tabs"
+    ],
+    "icons": {
+        "16": "icons/icon_16.png",
+        "32": "icons/icon_32.png",
+        "48": "icons/icon_48.png",
+        "128": "icons/icon_128.png"
+    },
+    "browser_action": {
+        "default_title": "ViFi - made for VIT students !!",
+        "default_icon": "icons/icon_16.png",
+        "default_popup": "popup.html"
+    },
+    "commands": {
+        "login": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+V"
+            },
+            "description": "Login to VIT WiFi"
+        },
+        "logout": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+L"
+            },
+            "description": "Logout of VIT WiFi"
+        }
+    }
+}
